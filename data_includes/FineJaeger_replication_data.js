@@ -1,4 +1,4 @@
- var shuffleSequence = seq("setcounter","intro","beginning_of_practice", sepWith("practice_sep", "practice"), "practice_sep", "end_of_practice", "spacebar",
+ var shuffleSequence = seq("setcounter","intro", "instructions", "beginning_of_practice", sepWith("practice_sep", "practice"), "practice_sep", "end_of_practice", "spacebar",
                           sepWith("sep", seq(anyOf('filler','ambiguous','unambiguous'))
                                        ), "end_of_experiment");
 var practiceItemTypes = ["practice"];
@@ -37,20 +37,21 @@ var defaults = [
 ];
 
 var items = [
-["practice_sep", "Separator", { transfer: 2000}], 
+["practice_sep", "Separator", {transfer: "keypress"}], 
  
-['spacebar','Separator', {transfer: 2000,    normalMessage: "Press spacebar on next screen to reveal words"}],
+['spacebar','Separator', {transfer: 2000,  normalMessage: "Press spacebar on next screen to reveal words"}],
     
 ["sep", "Separator", { transfer: 1000 }],
 ["intro", "Form", { html: { include: "intro.html" }}],
+["instructions", "Message",{html: {include: "instructions.html"}} { transfer: "keypress"}],
 
-["beginning_of_practice", "Message", {html: "<p>Let's start with a few practice sentences. As a reminder, press <b> z </b> if the answer is yes and <b> m</> if the answer is no</p>"}],
+["beginning_of_practice", "Message", {html: "<p>Let's start with a few practice sentences. As a reminder, press <b> z </b> if the answer is yes and <b> m</> if the answer is no</p> <p> Press any key to begin </p>" }],
 
 ["practice", "DashedSentence", {s: "The activitsts were tired of all the red tape involved in getting the new policy passed"}, "Question", {q: "Was it easy to get the policy passed?"}],
 ["practice", "DashedSentence", {s: "My classmates were bored to death while reading the War and Peace"}, "Question", {q: "Did my classmates find War and Peace enjoyable?"}],
 ["practice", "DashedSentence", {s: "The members of the audience were moved to tears by the performance"}, "Question", {q: "Was it an emotional performance?"}],
 
-["end_of_practice", "Message", {html: "<p>End of practice. On to the real experiment! As a reminder, press <b> z </b> if the answer is yes and <b> m</> if the answer is no</p>"}],
+["end_of_practice", "Message", {html: "<p>End of practice. On to the real experiment! As a reminder, press <b> z </b> if the answer is yes and <b> m</> if the answer is no</p> <p> Press any key to begin </p>"}],
 
 [["ambiguous",1], "DashedSentence", {s: "The large package dropped from the plane hit several tall trees."}, "Question", {q: "Did something fall out of the plane? ", hasCorrect: 0}],
 [["unambiguous",1], "DashedSentence", {s: "The large package that was dropped from the plane hit several tall trees."}, "Question", {q: "Did something fall out of the plane? ", hasCorrect: 0}],

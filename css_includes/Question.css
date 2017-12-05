@@ -1,6 +1,7 @@
 .Question {
     margin-left: 0;
     padding-left: 0;
+    font-size: 30;
 }
 .Question-normal-answer {
     font-size: 70pt;
