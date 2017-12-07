@@ -1,6 +1,6 @@
  var shuffleSequence = seq("setcounter","intro", "instructions", "beginning_of_practice", sepWith("practice_sep", "practice"), "practice_sep", "end_of_practice", "spacebar",
                           sepWith("sep", seq(anyOf('filler','ambiguous','unambiguous'))
-                                       ), "end_of_experiment");
+                                       ), "lextale_instructions", "LexTale", "end_of_experiment");
 var practiceItemTypes = ["practice"];
 
 var defaults = [
@@ -13,12 +13,7 @@ var defaults = [
         hideProgressBar: true,
         mode: "self-paced reading"
     },
-    "AcceptabilityJudgment", {
-        as: ["1", "2", "3", "4", "5", "6", "7"],
-        presentAsScale: true,
-        instructions: "Use number keys or click boxes to answer.",
-        leftComment: "(Bad)", rightComment: "(Good)"
-    },
+
     "Question", {
         hideProgressBar: true,
         hasCorrect: true,
@@ -27,23 +22,24 @@ var defaults = [
         as: [["z","Yes"], ["m","No"]]
     },
     "Message", {
-        hideProgressBar: true
+        hideProgressBar: true,
+        transfer: "keypress"
     },
     "Form", {
         hideProgressBar: true,
         continueOnReturn: true,
-        saveReactionTime: true
+        saveReactionTime: true,
     }
 ];
 
 var items = [
-["practice_sep", "Separator", {transfer: "keypress"}], 
+["practice_sep", "Separator", {transfer: 1000}], 
  
 ['spacebar','Separator', {transfer: 2000,  normalMessage: "Press spacebar on next screen to reveal words"}],
     
 ["sep", "Separator", { transfer: 1000 }],
 ["intro", "Form", { html: { include: "intro.html" }}],
-["instructions", "Message",{html: {include: "instructions.html"}} { transfer: "keypress"}],
+["instructions", "Message",{html: {include: "instructions.html"}}],
 
 ["beginning_of_practice", "Message", {html: "<p>Let's start with a few practice sentences. As a reminder, press <b> z </b> if the answer is yes and <b> m</> if the answer is no</p> <p> Press any key to begin </p>" }],
 
@@ -51,7 +47,7 @@ var items = [
 ["practice", "DashedSentence", {s: "My classmates were bored to death while reading the War and Peace"}, "Question", {q: "Did my classmates find War and Peace enjoyable?"}],
 ["practice", "DashedSentence", {s: "The members of the audience were moved to tears by the performance"}, "Question", {q: "Was it an emotional performance?"}],
 
-["end_of_practice", "Message", {html: "<p>End of practice. On to the real experiment! As a reminder, press <b> z </b> if the answer is yes and <b> m</> if the answer is no</p> <p> Press any key to begin </p>"}],
+["end_of_practice", "Message", {html: "<p>You've reached the end of practice. On to the real experiment! As a reminder, press <b> z </b> if the answer is yes and <b> m</> if the answer is no</p> <p> Press any key to begin </p>"}],
 
 [["ambiguous",1], "DashedSentence", {s: "The large package dropped from the plane hit several tall trees."}, "Question", {q: "Did something fall out of the plane? ", hasCorrect: 0}],
 [["unambiguous",1], "DashedSentence", {s: "The large package that was dropped from the plane hit several tall trees."}, "Question", {q: "Did something fall out of the plane? ", hasCorrect: 0}],
@@ -1973,5 +1969,76 @@ var items = [
 [["filler",[120,1]], "DashedSentence", {s: "Many of the city cops refuse to work in the rough parts of town."}, "Question", {q: "Were there parts of town where cops wouldn't work? ", hasCorrect: 0}],
 [["filler",[120,1]], "DashedSentence", {s: "Parliament members debated trivial financial issues while the protestors grew more restless."}, "Question", {q: "Did parliament members discuss important policy issues? ", hasCorrect: 1}],
 [["filler",[120,1]], "DashedSentence", {s: "Parliament members debated trivial financial issues while the protestors grew more restless."}, "Question", {q: "Did parliament members discuss important policy issues? ", hasCorrect: 1}],
- ["end_of_experiment", "Form", {html: '<p>End of experiment. Here is your prolific academic survey code: 3WHZNQCG </p><p>Do you have any feedback for us?</p><textarea rows="5" cols="40" name="feedback" />'}]
+
+["lextale_instructions", "Message",{html: {include: "lextale_instructions.html"}}],
+
+["LexTale", "Question", {q: "platery", hasCorrect: 1}],
+["LexTale", "Question", {q: "denial", hasCorrect: 0}],
+["LexTale", "Question", {q: "generic", hasCorrect: 0}],
+["LexTale", "Question", {q: "mensible", hasCorrect: 1}],
+["LexTale", "Question", {q: "scornful", hasCorrect: 0}],
+["LexTale", "Question", {q: "stoutly", hasCorrect: 0}],
+["LexTale", "Question", {q: "ablaze", hasCorrect: 0}],
+["LexTale", "Question", {q: "kermshaw", hasCorrect: 1}],
+["LexTale", "Question", {q: "moonlit", hasCorrect: 0}],
+["LexTale", "Question", {q: "lofty", hasCorrect: 0}],
+["LexTale", "Question", {q: "hurricane", hasCorrect: 0}],
+["LexTale", "Question", {q: "flaw", hasCorrect: 0}],
+["LexTale", "Question", {q: "alberation", hasCorrect: 1}],
+["LexTale", "Question", {q: "unkempt", hasCorrect: 0}],
+["LexTale", "Question", {q: "breeding", hasCorrect: 0}],
+["LexTale", "Question", {q: "festivity", hasCorrect: 0}],
+["LexTale", "Question", {q: "screech", hasCorrect: 0}],
+["LexTale", "Question", {q: "savoury", hasCorrect: 0}],
+["LexTale", "Question", {q: "plaudate", hasCorrect: 1}],
+["LexTale", "Question", {q: "shin", hasCorrect: 0}],
+["LexTale", "Question", {q: "fluid", hasCorrect: 0}],
+["LexTale", "Question", {q: "spaunch", hasCorrect: 1}],
+["LexTale", "Question", {q: "allied", hasCorrect: 0}],
+["LexTale", "Question", {q: "slain", hasCorrect: 0}],
+["LexTale", "Question", {q: "recipient", hasCorrect: 0}],
+["LexTale", "Question", {q: "exprate", hasCorrect: 1}],
+["LexTale", "Question", {q: "eloquence", hasCorrect: 0}],
+["LexTale", "Question", {q: "cleanliness", hasCorrect: 0}],
+["LexTale", "Question", {q: "dispatch", hasCorrect: 0}],
+["LexTale", "Question", {q: "rebondicate", hasCorrect: 1}],
+["LexTale", "Question", {q: "ingenious", hasCorrect: 0}],
+["LexTale", "Question", {q: "bewitch", hasCorrect: 0}],
+["LexTale", "Question", {q: "skave", hasCorrect: 1}],
+["LexTale", "Question", {q: "plaintively", hasCorrect: 0}],
+["LexTale", "Question", {q: "kilp", hasCorrect: 1}],
+["LexTale", "Question", {q: "interfate", hasCorrect: 1}],
+["LexTale", "Question", {q: "hasty", hasCorrect: 0}],
+["LexTale", "Question", {q: "lengthy", hasCorrect: 0}],
+["LexTale", "Question", {q: "fray", hasCorrect: 0}],
+["LexTale", "Question", {q: "crumper", hasCorrect: 1}],
+["LexTale", "Question", {q: "upkeep", hasCorrect: 0}],
+["LexTale", "Question", {q: "majestic", hasCorrect: 0}],
+["LexTale", "Question", {q: "magrity", hasCorrect: 1}],
+["LexTale", "Question", {q: "nourishment", hasCorrect: 0}],
+["LexTale", "Question", {q: "abergy", hasCorrect: 1}],
+["LexTale", "Question", {q: "proom", hasCorrect: 1}],
+["LexTale", "Question", {q: "turmoil", hasCorrect: 0}],
+["LexTale", "Question", {q: "carbohydrate", hasCorrect: 0}],
+["LexTale", "Question", {q: "scholar", hasCorrect: 0}],
+["LexTale", "Question", {q: "turtle", hasCorrect: 0}],
+["LexTale", "Question", {q: "fellick", hasCorrect: 1}],
+["LexTale", "Question", {q: "destription", hasCorrect: 1}],
+["LexTale", "Question", {q: "cylinder", hasCorrect: 0}],
+["LexTale", "Question", {q: "censorhip", hasCorrect: 0}],
+["LexTale", "Question", {q: "celestial", hasCorrect: 0}],
+["LexTale", "Question", {q: "rascal", hasCorrect: 0}],
+["LexTale", "Question", {q: "purrage", hasCorrect: 1}],
+["LexTale", "Question", {q: "pulsh", hasCorrect: 1}],
+["LexTale", "Question", {q: "muddy", hasCorrect: 0}],
+["LexTale", "Question", {q: "quirty", hasCorrect: 1}],
+["LexTale", "Question", {q: "pudour", hasCorrect: 1}],
+["LexTale", "Question", {q: "listless", hasCorrect: 0}],
+["LexTale", "Question", {q: "wrought", hasCorrect: 0}],
+
+
+["end_of_experiment", "Form", {html: {include: "end_of_exp.html"}}]
+
+
+
 ];
