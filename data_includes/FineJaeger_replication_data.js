@@ -1,6 +1,6 @@
- var shuffleSequence = seq("setcounter","intro", "instructions", "beginning_of_practice", sepWith("practice_sep", "practice"), "practice_sep", "end_of_practice", "spacebar",
+ var shuffleSequence = seq("setcounter","intro", "demographic", "instructions", "beginning_of_practice", sepWith("practice_sep", "practice"), "practice_sep", "end_of_practice", "spacebar",
                           sepWith("sep", seq(anyOf('filler','ambiguous','unambiguous'))
-                                       ), "lextale_instructions", "LexTale", "end_of_experiment");
+                                       ), "lextale_instructions", "LexTale", "participant_observations", "end_of_experiment");
 var practiceItemTypes = ["practice"];
 
 var defaults = [
@@ -39,6 +39,7 @@ var items = [
     
 ["sep", "Separator", { transfer: 1000 }],
 ["intro", "Form", { html: { include: "intro.html" }}],
+["demographic", "Form", { html: { include: "demographic.html" }}],
 ["instructions", "Message",{html: {include: "instructions.html"}}],
 
 ["beginning_of_practice", "Message", {html: "<p>Let's start with a few practice sentences. As a reminder, press <b> z </b> if the answer is yes and <b> m</> if the answer is no</p> <p> Press any key to begin </p>" }],
@@ -2036,7 +2037,7 @@ var items = [
 ["LexTale", "Question", {q: "listless", hasCorrect: 0}],
 ["LexTale", "Question", {q: "wrought", hasCorrect: 0}],
 
-
+["participant_observations", "Form", {html: {include: "participant_observations.html"}}],
 ["end_of_experiment", "Form", {html: {include: "end_of_exp.html"}}]
 
 
