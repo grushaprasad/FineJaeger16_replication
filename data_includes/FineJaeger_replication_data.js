@@ -147,7 +147,7 @@ var items = [
 [["filler",[6,1]], "DashedSentence", {s: "The eccentric professor always inspired his students to think critically about their work."}, "Question", {q: "Did the professor encourage laziness in his students? ", hasCorrect: 1}],
 [["filler",[6,1]], "DashedSentence", {s: "The former drug addict's memoirs were met with critical acclaim."}, "Question", {q: "Were the memoirs despised by critics? ", hasCorrect: 1}],
 [["filler",[6,1]], "DashedSentence", {s: "The former drug addict's memoirs were met with critical acclaim."}, "Question", {q: "Were the memoirs despised by critics? ", hasCorrect: 1}],
-[["filler",[7,1]], "DashedSentence", {s: "The store manager carefully tended to both the interior and exterior of the store."}, "Question", {q: "Did the manager care about the appearance of the storeThe large package that was dropped from the plane hit several tall trees.? ", hasCorrect: 0}],
+[["filler",[7,1]], "DashedSentence", {s: "The store manager carefully tended to both the interior and exterior of the store."}, "Question", {q: "Did the manager care about the appearance of the store? ", hasCorrect: 0}],
 [["filler",[7,1]], "DashedSentence", {s: "The store manager carefully tended to both the interior and exterior of the store."}, "Question", {q: "Did the manager care about the appearance of the store? ", hasCorrect: 0}],
 [["ambiguous",[7,1]], "DashedSentence", {s: "The grad students cheated during their exams left to go home."}, "Question", {q: "Did the grad students go home? ", hasCorrect: 0}],
 [["unambiguous",[7,1]], "DashedSentence", {s: "The grad students who were cheated during their exams left to go home."}, "Question", {q: "Did the grad students go home? ", hasCorrect: 0}],
