@@ -1971,6 +1971,9 @@ var items = [
 [["filler",[120,1]], "DashedSentence", {s: "Many of the city cops refuse to work in the rough parts of town."}, "Question", {q: "Were there parts of town where cops wouldn't work? ", hasCorrect: 0}],
 [["filler",[120,1]], "DashedSentence", {s: "Parliament members debated trivial financial issues while the protestors grew more restless."}, "Question", {q: "Did parliament members discuss important policy issues? ", hasCorrect: 1}],
 [["filler",[120,1]], "DashedSentence", {s: "Parliament members debated trivial financial issues while the protestors grew more restless."}, "Question", {q: "Did parliament members discuss important policy issues? ", hasCorrect: 1}],
+
+["lextale_instructions", "Form", {html: {include: "lextale_instructions.html"}}],
+
 ["LexTale", "Question", {q: "platery", hasCorrect: 1}],
 ["LexTale", "Question", {q: "denial", hasCorrect: 0}],
 ["LexTale", "Question", {q: "generic", hasCorrect: 0}],
